@@ -2,6 +2,41 @@
   border: 1px solid red;
 }
 
-.w600 {
-  width: 600px;
+.w-full {
+  width: 100%;
 }
+
+button {
+  padding: 100px;
+}
+
+textarea {
+  outline: none;
+  border: 1px solid gray;
+  resize: none;
+  height: 150px;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.color-block {
+  height: 15px;
+  width: 20px;
+}
+
+.bgc-blue { background-color: blue; }
+.bgc-green { background-color: green; }
+.bgc-red { background-color: red; }
+.bgc-purple { background-color: purple; }
+
+.mt5 { margin-top: 10px; }
