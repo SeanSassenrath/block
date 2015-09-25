@@ -1,4 +1,4 @@
-<html>
+<html ng-app="block">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>block</title>
@@ -7,7 +7,8 @@
 </head>
 <body>
   <head>
-    <div class="container debug">
+    <div class="container debug" ng-controller="BlocksCtrl as block">
+      {{block.test}}
       <nav>
         <ul>
         </ul>
@@ -17,17 +18,50 @@
           <h1 class="text-center">block</h1>
         </div>
       </div>
-      <div class="row debug">
-        <div class="col-s-12 debug">
-          <form>
-            <div class="form-group">
-              <textarea class="w600 center-block"></textarea>
+      <div class="row row-centered debug">
+        <div class="col-xs-12 col-lg-6 col-centered debug">
+          <div class="row">
+            <div class="col-xs-8 debug">
+              <div class="row debug">
+                <div class="col-xs-1 debug">
+                  <div class="mt5 color-block bgc-blue"></div>
+                </div>
+                <div class="col-xs-1 debug">
+                  <div class="mt5 color-block bgc-green"></div>
+                </div>
+                <div class="col-xs-1 debug">
+                  <div class="mt5 color-block bgc-red"></div>
+                </div>
+                <div class="col-xs-1 debug">
+                  <div class="mt5 color-block bgc-purple"></div>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <input type="text" placeholder="author" class="center-block">
+            <div class="col-xs-4 text-right debug">
+              <h5>{{block.userInput.textBody.length}}/500</h5>
             </div>
-            <button type="submit" class="center-block">add block</button>
+          </div>
+          <form name="block.userForm" ng-submit="block.submit(block.userInput)">
+            <div class="form-group">
+              <textarea class="w-full center-block" ng-model="block.userInput.textBody" required="true" ></textarea>
+            </div>
+            <div class="row debug">
+              <div class="col-sm-7">
+                <input type="text" class="w-full" ng-model="block.userInput.author" placeholder="author" required="true">
+              </div>
+              <div class="col-sm-5">
+                <button type="submit" class="pull-right">add block</button>
+              </div>
+            </div>
           </form>
+        </div>
+      </div>
+      <div class="row row-centered debug">
+        <div class="col-xs-12 col-lg-6 col-centered debug">
+          {{block.userInput}}
+          {{block.userForm}}
+          {{block.getBlocks}}
+          {{block.blocks}}
         </div>
       </div>
     </div>
@@ -36,5 +70,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="app/block.js"></script>
+  <script type="text/javascript" src="app/blocks/blocks-controller.js"></script>
+  <script type="text/javascript" src="app/models/blocks-model.js"></script>
 </body>
 </html>
