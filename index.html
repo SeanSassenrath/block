@@ -8,7 +8,6 @@
 <body>
   <head>
     <div class="container debug" ng-controller="BlocksCtrl as block">
-      {{block.test}}
       <nav>
         <ul>
         </ul>
@@ -24,30 +23,30 @@
             <div class="col-xs-8 debug">
               <div class="row debug">
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-blue"></div>
+                  <div class="mt5 color-block bgc-blue pointer" ng-click="block.color = 'blue'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-green"></div>
+                  <div class="mt5 color-block bgc-green pointer" ng-click="block.color = 'green'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-red"></div>
+                  <div class="mt5 color-block bgc-red pointer" ng-click="block.color = 'red'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-purple"></div>
+                  <div class="mt5 color-block bgc-purple pointer" ng-click="block.color = 'purple'"></div>
                 </div>
               </div>
             </div>
-            <div class="col-xs-4 text-right debug">
-              <h5>{{block.userInput.textBody.length}}/500</h5>
+            <div class="col-xs-4 text-right">
+              <h5>{{block.newBlock.textBody.length}}/500</h5>
             </div>
           </div>
-          <form name="block.userForm" ng-submit="block.submit(block.userInput)">
+          <form name="block.userForm" ng-submit="block.submit(block.newBlock)">
             <div class="form-group">
-              <textarea class="w-full center-block" ng-model="block.userInput.textBody" required="true" ></textarea>
+              <textarea class="w-full center-block" ng-model="block.newBlock.textBody" ng-maxLength="500" required="true" style="border: 1px solid {{block.color}};"></textarea>
             </div>
             <div class="row debug">
               <div class="col-sm-7">
-                <input type="text" class="w-full" ng-model="block.userInput.author" placeholder="author" required="true">
+                <input type="text" class="w-full" ng-model="block.newBlock.author" placeholder="author" required="true">
               </div>
               <div class="col-sm-5">
                 <button type="submit" class="pull-right">add block</button>
@@ -58,10 +57,10 @@
       </div>
       <div class="row row-centered debug">
         <div class="col-xs-12 col-lg-6 col-centered debug">
-          {{block.userInput}}
-          {{block.userForm}}
-          {{block.getBlocks}}
-          {{block.blocks}}
+          <div class="w-full" style="border: 1px solid gray; margin-top: 50px;" ng-repeat="block in block.blocks">
+            <h4>{{block.textBody}}</h5>
+            <h6>{{block.author}}</h6>
+          </div>
         </div>
       </div>
     </div>

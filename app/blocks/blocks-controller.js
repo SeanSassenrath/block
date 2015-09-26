@@ -4,7 +4,9 @@ angular.module('blocksCtrl', [])
   .controller('BlocksCtrl', function(Blocks) {
     var ctrl = this;
 
-    ctrl.userInput = {
+    ctrl.color = "blue";
+
+    ctrl.newBlock = {
       textBody: "",
       author: "",
       color: "" || "gray",
@@ -18,11 +20,21 @@ angular.module('blocksCtrl', [])
         })
     }
 
-    Blocks.getBlocks()
+    ctrl.resetForm = function() {
+      ctrl.newBlock = {
+        textBody: "",
+        author: "",
+        color: "" || "gray",
+      };
+    };
+
+    ctrl.getBlocks = function(){
+      Blocks.getBlocks()
       .then(function(data) {
         ctrl.blocks = data;
         console.log(ctrl.blocks);
       });
+    }
 
-    ctrl.test = "TESTING!"
+    ctrl.getBlocks();
   })
