@@ -12,7 +12,7 @@ button {
 
 textarea {
   outline: none;
-  border: 1px solid gray;
+  /*border: 1px solid gray;*/
   resize: none;
   height: 150px;
 }
@@ -40,3 +40,13 @@ textarea {
 .bgc-purple { background-color: purple; }
 
 .mt5 { margin-top: 10px; }
+
+.pointer { cursor: pointer; }
+
+/*To turn off Firefox's red shadow for required fields*/
+input:required {
+    box-shadow:none !important;
+}
+textarea:required {
+  box-shadow: none !important;
+}
