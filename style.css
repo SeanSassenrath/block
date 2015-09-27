@@ -34,11 +34,12 @@ textarea {
   width: 20px;
 }
 
+.bgc-off-white { background-color: #F2F2F2; }
 .bgc-gray { background-color: gray; }
-.bgc-blue { background-color: blue; }
-.bgc-green { background-color: green; }
-.bgc-red { background-color: red; }
-.bgc-purple { background-color: purple; }
+.bgc-blue { background-color: #c9e4ff; }
+.bgc-green { background-color: #cadebf; }
+.bgc-red { background-color: #ffbdbd; }
+.bgc-purple { background-color: #f1cbff; }
 
 .mt5 { margin-top: 10px; }
 

@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="bgc-off-white">
   <head>
     <div class="container debug" ng-controller="BlocksCtrl as block">
       <nav>
@@ -26,16 +26,16 @@
                   <div class="mt5 color-block bgc-gray pointer" ng-click="block.newBlock.color = 'gray'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-blue pointer" ng-click="block.newBlock.color = 'blue'"></div>
+                  <div class="mt5 color-block bgc-blue pointer" ng-click="block.newBlock.color = '#c9e4ff'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-green pointer" ng-click="block.newBlock.color = 'green'"></div>
+                  <div class="mt5 color-block bgc-green pointer" ng-click="block.newBlock.color = '#cadebf'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-red pointer" ng-click="block.newBlock.color = 'red'"></div>
+                  <div class="mt5 color-block bgc-red pointer" ng-click="block.newBlock.color = '#ffbdbd'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-purple pointer" ng-click="block.newBlock.color = 'purple'"></div>
+                  <div class="mt5 color-block bgc-purple pointer" ng-click="block.newBlock.color = '#f1cbff'"></div>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@
           </div>
           <form name="block.userForm" ng-submit="block.submit(block.newBlock)">
             <div class="form-group">
-              <textarea class="w-full center-block" ng-model="block.newBlock.textBody" ng-maxLength="500" required="true" style="border: 1px solid {{block.newBlock.color}};"></textarea>
+              <textarea class="w-full center-block" ng-model="block.newBlock.textBody" ng-maxLength="500" required="true" style="border: 5px solid {{block.newBlock.color}};"></textarea>
             </div>
             <div class="row debug">
               <div class="col-sm-7">
@@ -60,7 +60,7 @@
       </div>
       <div class="row row-centered debug" ng-repeat="block in block.blocks | orderBy:'-date'">
         <div class="col-xs-12 col-lg-6 col-centered debug">
-          <div class="w-full" style="border: 1px solid {{block.color}}; margin-top: 25px; margin-bottom: 25px;">
+          <div class="w-full" style="border: 5px solid {{block.color}}; margin-top: 25px; margin-bottom: 25px;">
             <div class="row">
               <div class="col-xs-12">
                 <h5 class="pl10 pr10">{{block.textBody}}</h5>
