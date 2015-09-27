@@ -3,67 +3,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>block</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <head>
-    <div class="container debug" ng-controller="BlocksCtrl as block">
+    <div class="container " ng-controller="BlocksCtrl as block">
       <nav>
-        <ul>
         </ul>
+        <ul>
       </nav>
-      <div class="row debug">
-        <div class="col-s-12 debug">
-          <h1 class="text-center">block</h1>
+      <div class="row ">
+        <div class="col-s-12 ">
+          <h1 class="text-center roboto-normal" style="color: gray;">block</h1>
+          <h5 class="text-center roboto-light" style="color: gray;">Write whatever you like for all to see.</h5>
         </div>
       </div>
-      <div class="row row-centered debug">
-        <div class="col-xs-12 col-lg-6 col-centered debug">
+      <div class="row row-centered ">
+        <div class="col-xs-12 col-lg-6 col-centered ">
           <div class="row">
-            <div class="col-xs-8 debug">
-              <div class="row debug">
-                <div class="col-xs-1 debug">
+            <div class="col-xs-8 ">
+              <div class="row ">
+                <div class="col-xs-1 ">
                   <div class="mt5 color-block bgc-gray pointer" ng-click="block.newBlock.color = 'gray'"></div>
                 </div>
-                <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-blue pointer" ng-click="block.newBlock.color = 'blue'"></div>
+                <div class="col-xs-1 ">
+                  <div class="mt5 color-block bgc-blue pointer" ng-click="block.newBlock.color = '#c9e4ff'"></div>
                 </div>
-                <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-green pointer" ng-click="block.newBlock.color = 'green'"></div>
+                <div class="col-xs-1 ">
+                  <div class="mt5 color-block bgc-green pointer" ng-click="block.newBlock.color = '#cadebf'"></div>
                 </div>
-                <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-red pointer" ng-click="block.newBlock.color = 'red'"></div>
+                <div class="col-xs-1 ">
+                  <div class="mt5 color-block bgc-red pointer" ng-click="block.newBlock.color = '#ffbdbd'"></div>
                 </div>
-                <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-purple pointer" ng-click="block.newBlock.color = 'purple'"></div>
+                <div class="col-xs-1 ">
+                  <div class="mt5 color-block bgc-purple pointer" ng-click="block.newBlock.color = '#f1cbff'"></div>
                 </div>
               </div>
             </div>
             <div class="col-xs-4 text-right">
-              <h5>{{block.newBlock.textBody.length}}/500</h5>
+              <h5 style="color: gray;">{{block.newBlock.textBody.length}}/500</h5>
             </div>
           </div>
           <form name="block.userForm" ng-submit="block.submit(block.newBlock)">
             <div class="form-group">
-              <textarea class="w-full center-block" ng-model="block.newBlock.textBody" ng-maxLength="500" required="true" style="border: 1px solid {{block.newBlock.color}};"></textarea>
+              <textarea class="w-full center-block fz1-3 roboto-normal pl10 pr10 pt10" ng-model="block.newBlock.textBody" ng-maxLength="500" required="true" style="border: 5px solid {{block.newBlock.color}};" placeholder="Type here human"></textarea>
             </div>
-            <div class="row debug">
+            <div class="row ">
               <div class="col-sm-7">
                 <input type="text" class="w-full" ng-model="block.newBlock.author" placeholder="author" required="true">
               </div>
               <div class="col-sm-5">
-                <button type="submit" class="pull-right">add block</button>
+                <button type="submit" class="pull-right" style="background-color: {{block.newBlock.color}}">add block</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-      <div class="row row-centered debug" ng-repeat="block in block.blocks | orderBy:'-date'">
-        <div class="col-xs-12 col-lg-6 col-centered debug">
-          <div class="w-full" style="border: 1px solid {{block.color}}; margin-top: 25px; margin-bottom: 25px;">
+      <div class="row row-centered " ng-repeat="block in block.blocks | orderBy:'-date'">
+        <div class="col-xs-12 col-lg-6 col-centered ">
+          <div class="w-full" style="border: 5px solid {{block.color}}; margin-top: 25px; margin-bottom: 25px;">
             <div class="row">
               <div class="col-xs-12">
-                <h5 class="pl10 pr10">{{block.textBody}}</h5>
+                <h5 class="pl10 pr10 roboto-normal fz1-3">{{block.textBody}}</h5>
               </div>
             </div>
             <div class="row">
@@ -78,10 +80,15 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 debug" style="height: 150px;">
-
+        <div class="col-xs-12 " style="height: 50px;">
         </div>
       </div>
+      <footer>
+        <div class="row">
+          <div class="col-xs-12 " style="height: 100px;">
+          </div>
+        </div>
+      </footer>
     </div>
   </head>
 
