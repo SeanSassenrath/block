@@ -23,16 +23,19 @@
             <div class="col-xs-8 debug">
               <div class="row debug">
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-blue pointer" ng-click="block.color = 'blue'"></div>
+                  <div class="mt5 color-block bgc-gray pointer" ng-click="block.newBlock.color = 'gray'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-green pointer" ng-click="block.color = 'green'"></div>
+                  <div class="mt5 color-block bgc-blue pointer" ng-click="block.newBlock.color = 'blue'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-red pointer" ng-click="block.color = 'red'"></div>
+                  <div class="mt5 color-block bgc-green pointer" ng-click="block.newBlock.color = 'green'"></div>
                 </div>
                 <div class="col-xs-1 debug">
-                  <div class="mt5 color-block bgc-purple pointer" ng-click="block.color = 'purple'"></div>
+                  <div class="mt5 color-block bgc-red pointer" ng-click="block.newBlock.color = 'red'"></div>
+                </div>
+                <div class="col-xs-1 debug">
+                  <div class="mt5 color-block bgc-purple pointer" ng-click="block.newBlock.color = 'purple'"></div>
                 </div>
               </div>
             </div>
@@ -42,7 +45,7 @@
           </div>
           <form name="block.userForm" ng-submit="block.submit(block.newBlock)">
             <div class="form-group">
-              <textarea class="w-full center-block" ng-model="block.newBlock.textBody" ng-maxLength="500" required="true" style="border: 1px solid {{block.color}};"></textarea>
+              <textarea class="w-full center-block" ng-model="block.newBlock.textBody" ng-maxLength="500" required="true" style="border: 1px solid {{block.newBlock.color}};"></textarea>
             </div>
             <div class="row debug">
               <div class="col-sm-7">
@@ -55,12 +58,28 @@
           </form>
         </div>
       </div>
-      <div class="row row-centered debug">
+      <div class="row row-centered debug" ng-repeat="block in block.blocks | orderBy:'-date'">
         <div class="col-xs-12 col-lg-6 col-centered debug">
-          <div class="w-full" style="border: 1px solid gray; margin-top: 50px;" ng-repeat="block in block.blocks">
-            <h4>{{block.textBody}}</h5>
-            <h6>{{block.author}}</h6>
+          <div class="w-full" style="border: 1px solid {{block.color}}; margin-top: 25px; margin-bottom: 25px;">
+            <div class="row">
+              <div class="col-xs-12">
+                <h5 class="pl10 pr10">{{block.textBody}}</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <h6 class="pl10 pr10">{{block.author}}</h6>
+              </div>
+              <div class="col-xs-6 text-right">
+                <h6 class="pl10 pr10">{{block.date | date}}</h6>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 debug" style="height: 150px;">
+
         </div>
       </div>
     </div>

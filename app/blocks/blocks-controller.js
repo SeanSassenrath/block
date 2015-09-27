@@ -4,7 +4,7 @@ angular.module('blocksCtrl', [])
   .controller('BlocksCtrl', function(Blocks) {
     var ctrl = this;
 
-    ctrl.color = "blue";
+    // ctrl.color = "blue";
 
     ctrl.newBlock = {
       textBody: "",
@@ -16,7 +16,8 @@ angular.module('blocksCtrl', [])
       Blocks.createBlock(block)
         .then(function(data) {
           console.log(data);
-          ctrl.userForm = {};
+          ctrl.resetForm();
+          ctrl.getBlocks();
         })
     }
 
