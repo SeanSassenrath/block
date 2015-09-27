@@ -7,7 +7,11 @@
 }
 
 button {
-  padding: 100px;
+  padding: 3px 30px 3px 28px;
+  border-radius: 3px;
+  border: 1px solid #d6d4d4;
+  /*background-color: gray;*/
+  color: white;
 }
 
 textarea {
@@ -56,3 +60,16 @@ textarea:required {
 
 .pl10 { padding-left: 10px}
 .pr10 { padding-right: 10px}
+.pt10 { padding-top: 10px}
+
+.roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.roboto-normal {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.fz1-3 { font-size: 1.3em; }
