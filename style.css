@@ -34,6 +34,7 @@ textarea {
   width: 20px;
 }
 
+.bgc-gray { background-color: gray; }
 .bgc-blue { background-color: blue; }
 .bgc-green { background-color: green; }
 .bgc-red { background-color: red; }
@@ -49,4 +50,8 @@ input:required {
 }
 textarea:required {
   box-shadow: none !important;
+  border-radius: 3px;
 }
+
+.pl10 { padding-left: 10px}
+.pr10 { padding-right: 10px}
